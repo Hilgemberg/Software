@@ -96,3 +96,8 @@ os seus codigos estão na maquina.
 	git push origin master (Serve para atualizar os dados no servidor)
 	git pull origem master (Serve para baixar as atualizações do servidor para maquina local com o projeto em andamento)
 	git fetch origem Novo branch (Cria um novo branch com as alterações do servidor sem alterar o branch que estou trabalhando)
+
+16 - Git com Git Hub 
+	ssh-keygen (Para gerar uma chave de acesso ssh para o git hub poder acessar via web)
+	
+	
