@@ -1,0 +1,32 @@
+Curso banco de dados oracle - Adailtom
+
+iniciado 04/12/2019
+
+senhas para o banco de dados sys e system
+
+usuario teste
+senha teste
+
+outro usuario
+usuario: treinaweb 
+senha: treinaweb
+
+usuario: luis
+senha: teste
+
+Tradução
+
+Schema  = esquemas
+Grid = Grade 
+Tuplas = Linhas
+Key = Chave
+Foreign = estrangeira
+
+Base sobre bancos de dados.
+
+Banco de dados relacional é um banco com uma coleção de relacionamentos:
+Informalmente cada tabela representa uma relação.
+Cada linha representa uma coleção de relacionamentos.
+Conceitualmente o banco de dados utiiza as tabelas para reprentar as entidades e as colunas
+para representar os atributos.
+As linhas são conhecidas como tuplas.
