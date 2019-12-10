@@ -88,3 +88,8 @@ CREATE TABLE cidade (
              uf   VARCHAR (2) NOT NULL,
              taxa NUMBER (10,2) NOT NULL,
         PRIMARY KEY (codigo_cidade) );
+        
+Contraints serve para validar a inserção de dados no banco.
+ Os tipos de contrants estão na pagina da apostila 25.
+
+Chaves estrangeiras (Foreing keys) são criadas após a criação da tabela e definação da chave primaria (primary key).
