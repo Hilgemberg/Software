@@ -93,3 +93,17 @@ Contraints serve para validar a inserção de dados no banco.
  Os tipos de contrants estão na pagina da apostila 25.
 
 Chaves estrangeiras (Foreing keys) são criadas após a criação da tabela e definação da chave primaria (primary key).
+
+Excluir uma coluna da tabela
+ ALTER TABLE cliente DROP COLUNM campo1;
+
+Excluir uma tabela
+ DROP TABLE produtos;
+ 
+Sinônimos 
+Cria apelidos para acessar objetos com o noem muito longo.
+
+CREATE SYNONYM cid  FOR  cidade;
+
+View (Visões)
+É uma forma particular de visualizar dados e uma ou mais tabelas.
