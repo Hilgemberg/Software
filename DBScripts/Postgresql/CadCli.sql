@@ -1,6 +1,8 @@
+CREATE DATABASE  CadastroCliente;
+
 CREATE TABLE TBLCliente01 (
   CodigoCliente INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Nomecliente VARCHAR(45) NULL,
+  Nomecliente VARCHAR(60) NULL,
   DataNascimento DATE NULL,
   Mae VARCHAR(60) NULL,
   Pai VARCHAR(60) NULL,
