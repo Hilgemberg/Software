@@ -91,5 +91,3 @@ CREATE TABLE tblTipoLogradouro (
   AbreviacaoLogradouro VARCHAR(5) NULL, --CEP
   PRIMARY KEY(nsuTpLogradouro)
 );
-
-
