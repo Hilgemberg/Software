@@ -10,6 +10,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/* Cores abaixo estão hexadecimal  */
 :root {
   --blue: #4e73df;
   --indigo: #6610f2;
@@ -9698,7 +9699,7 @@ a:focus {
 }
 
 .bg-gradient-danger {
-  background-color: #e74a3b;
+  background-color: #e74a3b; <!--Personalisa a cor em hexadecimal cor vermelha -->
   background-image: linear-gradient(180deg, #e74a3b 10%, #be2617 100%);
   background-size: cover;
 }

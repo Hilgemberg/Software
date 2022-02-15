@@ -1,7 +1,8 @@
 <?php 
+// esse é um Dashboard 
 
-    //variaveis para o menu
-//O get será passado uma referencia
+    //variaveis para o menu que vai ter referencia com uma condição abixo no código
+   //O get será passado por referencia
     $pag = @$_GET["pag"];
     $menu1 = "recepcionistas";
     $menu2 = "../painel-mecanicos/mecanicos";
@@ -13,8 +14,6 @@
 
  ?>
 
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,6 +22,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <meta name="description" content="">
         <meta name="author" content="Hugo Vasconcelos">
 
@@ -38,7 +38,6 @@
         
         <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-
         <!-- Bootstrap core JavaScript-->
         <script src="../vendor/jquery/jquery.min.js"></script>
         <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -53,7 +52,8 @@
         <!-- Page Wrapper -->
         <div id="wrapper">
 
-            <!-- Sidebar -->
+            <!-- Sidebar Neste ponto começa o menu da pagina = BG bacgrouyd fundo >Tem referencia a cor do menu neste caso o verde -->
+            <!--Que vai se referenciar com o arquivo css sb-admin-2.css -->
             <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
@@ -62,30 +62,27 @@
                     <div class="sidebar-brand-text mx-3">Administrador</div>
                 </a>
 
-                <!-- Divider -->
+                <!-- Divider  linhas ou barras que separam os menus-->
                 <hr class="sidebar-divider my-0">
-
-
 
                 <!-- Divider -->
                 <hr class="sidebar-divider">
 
-                <!-- Heading -->
+                <!-- Heading nome do menu abaixo fica os itens do menu -->
                 <div class="sidebar-heading">
                     <b><i> Cadastros </i></b>
                 </div>
 
-
-
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-users"></i> <!--Icone referente ao menu do site https://fontawesome.com/ para personalizar basta copiar e substituir -->
                         <span>Cadastro de Pessoas</span>
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Funcionários:</h6>
+                            <h6 class="collapse-header">Funcionários:</h6> <!--Subcabeçalho do menu para maior informação -->
                             <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>">Recepcionista</a>
+                            <!--Aqui faz referencia ao menu que está apontado no topo do codigo onde recepcionista faz reerencia a pagina chamada-->
                             <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>">Mecânicos</a>
                         </div>
                     </div>
@@ -116,8 +113,6 @@
                     Consultas
                 </div>
 
-
-
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?pag=<?php echo $menu6 ?>">
@@ -127,7 +122,6 @@
 
                 <!-- Nav Item - Tables -->
               
-
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
 
@@ -152,20 +146,17 @@
                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <img class="mt-2" src="../img/logo.png" width="150">
-
-
+                        <img class="mt-2" src="../img/Emp/logo.png" width="150">
+                         <!--Acima tem referencia com a logo da empresa a utilizar o sistema  vai olhar para a pasta imagem-->
 
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
-
-
 
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nome do usuario</span>
-                                    <img class="img-profile rounded-circle" src="../img/sem-foto.jpg">
+                                    <img class="img-profile rounded-circle" src="../img/Pess/sem-foto.jpg">
 
                                 </a>
                                 <!-- Dropdown - User Information -->
@@ -182,21 +173,22 @@
                                     </a>
                                 </div>
                             </li>
-
                         </ul>
-
                     </nav>
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
 
+                     <!--Código das chamadas das paginas onde é efetuado uma conferência se a variável "pag" e nula o sistema faz para a pagina home -->
                         <?php if (@$pag == null) { 
                         @include_once("home.php"); 
                         
+                        //caso contrario esteja chamando o conteúdo de qualquer menu ele vai incluir a pagina de referencia. 
                         } else if (@$pag==$menu1) {
                         @include_once(@$menu1.".php");
                         
+                        //O @ neste ponto faz com que o php iquinore algumas chamadas para que não seja exibido ccódigo de erro na tela do cliente
                         } else if (@$pag==$menu2) {
                         @include_once(@$menu2.".php");
 
@@ -212,22 +204,16 @@
                         } else if (@$pag==$menu6) {
                         @include_once(@$menu6.".php");
 
-                       
-                        
                         } else {
                         @include_once("home.php");
                         }
-                        ?>
-                        
-                        
+                        ?>                
 
                     </div>
                     <!-- /.container-fluid -->
 
                 </div>
                 <!-- End of Main Content -->
-
-
 
             </div>
             <!-- End of Content Wrapper -->
@@ -240,9 +226,6 @@
             <i class="fas fa-angle-up"></i>
         </a>
 
-
-
-
         <!--  Modal Perfil-->
         <div class="modal fade" id="ModalPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -253,8 +236,6 @@
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
-
-
 
                     <form id="form-perfil" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
@@ -293,20 +274,14 @@
                                 </div>
                             </div> 
 
-
-
                             <small>
                                 <div id="mensagem" class="mr-4">
 
                                 </div>
                             </small>
 
-
-
                         </div>
                         <div class="modal-footer">
-
-
 
                             <input value="<?php echo $idUsuario ?>" type="hidden" name="txtid" id="txtid">
                             <input value="<?php echo $cpf ?>" type="hidden" name="antigo" id="antigo">
@@ -345,6 +320,3 @@
     </body>
 
 </html>
-
-
-
