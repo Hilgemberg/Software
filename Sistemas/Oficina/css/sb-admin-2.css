@@ -10,7 +10,6 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-/* Cores abaixo estão hexadecimal  */
 :root {
   --blue: #4e73df;
   --indigo: #6610f2;
@@ -20,7 +19,7 @@
   --orange: #fd7e14;
   --yellow: #f6c23e;
   --green: #1cc88a;
-  --greenline: #00FF00;
+  --green01: #0c7013;
   --teal: #20c9a6;
   --cyan: #36b9cc;
   --white: #fff;
@@ -9681,8 +9680,8 @@ a:focus {
 }
 
 .bg-gradient-success {
-  background-color: #00FF00;
-  background-image: linear-gradient(180deg, #00FF00 10%, #13855c 100%);
+  background-color: #1cc88a;
+  background-image: linear-gradient(180deg, #1cc88a 10%, #13855c 100%);
   background-size: cover;
 }
 
@@ -9699,7 +9698,7 @@ a:focus {
 }
 
 .bg-gradient-danger {
-  background-color: #e74a3b; <!--Personalisa a cor em hexadecimal cor vermelha -->
+  background-color: #e74a3b;
   background-image: linear-gradient(180deg, #e74a3b 10%, #be2617 100%);
   background-size: cover;
 }
