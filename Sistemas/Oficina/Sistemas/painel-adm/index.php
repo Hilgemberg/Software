@@ -1,16 +1,13 @@
 <?php 
-// esse é um Dashboard 
 
-    //variaveis para o menu que vai ter referencia com uma condição abixo no código
-   //O get será passado por referencia
+    //variaveis para o menu
     $pag = @$_GET["pag"];
-    $menu1 = "recepcionistas";
-    $menu2 = "../painel-mecanicos/mecanicos";
+    $menu1 = "menu1";
+    $menu2 = "menu2";
     $menu3 = "menu3";
     $menu4 = "menu4";
     $menu5 = "menu5";
     $menu6 = "menu6";
-  //<!-- Controle de menus do sistema aqui faz referenia aos menus do sistema --> 
 
  ?>
 
@@ -22,7 +19,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <meta name="description" content="">
         <meta name="author" content="Hugo Vasconcelos">
 
@@ -42,8 +38,8 @@
         <script src="../vendor/jquery/jquery.min.js"></script>
         <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         
-         <link rel="shortcut icon" href="../img/logo-favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../img/logo-favicon.ico" type="image/x-icon">
+         <link rel="shortcut icon" href="../../img/Emp/favicon0.ico" type="image/x-icon">
+    <link rel="icon" href="../../img/Emp/favicon0.ico" type="image/x-icon">
 
     </head>
 
@@ -52,41 +48,74 @@
         <!-- Page Wrapper -->
         <div id="wrapper">
 
-            <!-- Sidebar Neste ponto começa o menu da pagina = BG bacgrouyd fundo >Tem referencia a cor do menu neste caso o verde -->
-            <!--Que vai se referenciar com o arquivo css sb-admin-2.css -->
+            <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
-
+              <!-- Na linha acima está setado a cor do menu bg tem referencia a backgraund (Fundo) -->
                 <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
 
-                    <div class="sidebar-brand-text mx-3">Administrador</div>
+                    <div class="sidebar-brand-text mx-3">Administrativo</div>
                 </a>
 
-                <!-- Divider  linhas ou barras que separam os menus-->
+                <!-- Divider -->
                 <hr class="sidebar-divider my-0">
 
                 <!-- Divider -->
                 <hr class="sidebar-divider">
 
-                <!-- Heading nome do menu abaixo fica os itens do menu -->
+                <!-- Heading -->
                 <div class="sidebar-heading">
-                    <b><i> Cadastros </i></b>
+                    Cadastro Geral
                 </div>
 
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-users"></i> <!--Icone referente ao menu do site https://fontawesome.com/ para personalizar basta copiar e substituir -->
-                        <span>Cadastro de Pessoas</span>
+                        <i class="fas fa-users"></i>
+                        <span>Cadastro Funcionários</span>
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Funcionários:</h6> <!--Subcabeçalho do menu para maior informação -->
-                            <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>">Recepcionista</a>
-                            <!--Aqui faz referencia ao menu que está apontado no topo do codigo onde recepcionista faz reerencia a pagina chamada-->
-                            <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>">Mecânicos</a>
+                            <h6 class="collapse-header">FUNCIONÁRIOS:</h6>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>">RECEPCIONISTAS</a>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>">MECÂNICOS</a>
+                            <!--Comando para criar itens do menu com separação por cabeçalho  -->
+                            <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">CLIENTES:</h6>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>">PESSOA FISÍCA</a>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>">PESSOA JURÍDICA</a>
+
+
                         </div>
                     </div>
                 </li>
+
+
+<!-- Inicio teste menu -->
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <!-- Nav Item - Utilities Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fas fa-home"></i>
+                        <span>Opções </span>
+                    </a>
+                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Dados:</h6>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu3 ?>">Menu 3</a>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu4 ?>">Menu 4</a>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu5 ?>">Menu 5</a>
+
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+
+<!--Final teste menu  -->
+
 
                 <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item">
@@ -97,9 +126,9 @@
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Dados XX:</h6>
-                            <a class="collapse-item" href="index.php?pag=<?php echo $menu3 ?>">Menu 3</a>
-                            <a class="collapse-item" href="index.php?pag=<?php echo $menu4 ?>">Menu 4</a>
-                            <a class="collapse-item" href="index.php?pag=<?php echo $menu5 ?>">Menu 5</a>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu6 ?>">Menu 6</a>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu7 ?>">Menu 7</a>
+                            <a class="collapse-item" href="index.php?pag=<?php echo $menu8 ?>">Menu 8</a>
 
                         </div>
                     </div>
@@ -147,7 +176,6 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <img class="mt-2" src="../img/Emp/logo.png" width="150">
-                         <!--Acima tem referencia com a logo da empresa a utilizar o sistema  vai olhar para a pasta imagem-->
 
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -156,7 +184,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nome do usuario</span>
-                                    <img class="img-profile rounded-circle" src="../img/Pess/sem-foto.jpg">
+                                    <img class="img-profile rounded-circle" src="../img/User/sem-foto.jpg">
 
                                 </a>
                                 <!-- Dropdown - User Information -->
@@ -173,22 +201,21 @@
                                     </a>
                                 </div>
                             </li>
+
                         </ul>
+
                     </nav>
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
 
-                     <!--Código das chamadas das paginas onde é efetuado uma conferência se a variável "pag" e nula o sistema faz para a pagina home -->
                         <?php if (@$pag == null) { 
                         @include_once("home.php"); 
                         
-                        //caso contrario esteja chamando o conteúdo de qualquer menu ele vai incluir a pagina de referencia. 
                         } else if (@$pag==$menu1) {
                         @include_once(@$menu1.".php");
                         
-                        //O @ neste ponto faz com que o php iquinore algumas chamadas para que não seja exibido ccódigo de erro na tela do cliente
                         } else if (@$pag==$menu2) {
                         @include_once(@$menu2.".php");
 
@@ -202,13 +229,13 @@
                         @include_once(@$menu5.".php");
 
                         } else if (@$pag==$menu6) {
-                        @include_once(@$menu6.".php");
-
+                        @include_once(@$menu6.".php");           
+                        
                         } else {
                         @include_once("home.php");
                         }
-                        ?>                
-
+                        ?>
+                        
                     </div>
                     <!-- /.container-fluid -->
 
@@ -269,7 +296,7 @@
 
                                     </div>
                                     <div class="col-md-12 mb-2">
-                                        <img src="../img/profiles/<?php echo $img ?>" alt="Carregue sua Imagem" id="target" width="100%">
+                                        <img src="../img/User/profiles/<?php echo $img ?>" alt="Carregue sua Imagem" id="target" width="100%">
                                     </div>
                                 </div>
                             </div> 
@@ -290,12 +317,9 @@
                             <button type="submit" name="btn-salvar-perfil" id="btn-salvar-perfil" class="btn btn-primary">Salvar</button>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>
-
 
         <!-- Core plugin JavaScript-->
         <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
