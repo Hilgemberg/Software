@@ -8,9 +8,12 @@ $pag = @$_GET["pag"];
   $menu2 = "menu2";
    $menu3 = "menu3";
     $menu4 = "menu4";
-   $menu5 = "menu5";
-  $menu6 = "menu6";
-$nemu7 = "menu7";
+    $menu5 = "menu5";
+    $menu6 = "menu6";
+   $nemu7 = "menu7";
+  $nemu8 = "menu8";
+ $nemu9 = "menu9";
+$nemu10 = "menu10";
 
 //Abaixo fica o fechamento das declarações de variáveis 
  ?>
@@ -76,24 +79,28 @@ $nemu7 = "menu7";
 <!-- Divider = Divisor, insere uma linha que vai dividir o cabeçalho do menu -->
  <hr class="sidebar-divider"> <!-- Inseri um divisor no menu -->
  <!-- Heading = Cabeçalho, vai inserir um cabeçalho no menu -->
-  <div class="sidebar-heading"> Cadastro </div>
+  <div class="sidebar-heading"> Cadastro Geral </div>
    <li class="nav-item"> <!-- Nav Item = Itens de navegação aqui inicia o menu de navegação 01 -->
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
     <!-- Nav LInk collapsed =  Linke de navegação recolhido, inicio de linke de navegação -->    
      <i class="fas fa-users"></i> <!-- Inseri um icone do site https://fontawesome.com/, que vai representar os usuarios quando o menu estive recolhido -->
-      <span> Cadastro Geral </span> <!-- Span = Período, aqui insere o texto na linha do menu -->
+      <span> Cadastro </span> <!-- Span = Período, aqui insere o texto na linha do menu -->
        </a> <!-- Final do linke de navegação -->
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <!-- aria label leadby = Etiqueta de aréa liberada, inicio da aréa liberada -->    
          <div class="bg-white py-2 collapse-inner rounded"> <!-- Inicio da definição do fundo do menu para branco -->
-          <h6 class="collapse-header"> Funcionários: </h6>  <!-- Collapsed Header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
-         <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Recepcionistas </a> <!-- Item do menu recolhido que tem referencia a recepcionista -->
-        <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>"> Mecânicos </a> <!-- Item do menu recolhido que tem referencia ao mecânico -->
-       <!--Comando para criar itens do menu com separação por cabeçalho  -->
-      <div class="bg-white py-2 collapse-inner rounded"> <!-- Inicio da definição do fundo do menu para branco -->
-     <h6 class="collapse-header"> Clientes: </h6> <!-- Collapsed header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
-    <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Pessoa Fisíca </a> <!-- Item do menu que tem referencia a Pessoa Fisica -->
-   <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>"> Pessoa Jurídica </a> <!-- Item do menu que tem referencia a Pessoa Juridica -->
+          <h6 class="collapse-header"> Empresas: </h6> <!-- Collapsed header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
+           <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Cadastro Empresa </a> <!-- Item do menu que tem referencia a Pessoa Fisica -->         
+           <div class="bg-white py-2 collapse-inner rounded"> <!-- Inicio da definição do fundo do menu para branco -->
+            <h6 class="collapse-header"> Funcionários: </h6>  <!-- Collapsed Header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
+           <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Recepcionistas </a> <!-- Item do menu recolhido que tem referencia a recepcionista -->
+          <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>"> Mecânicos </a> <!-- Item do menu recolhido que tem referencia ao mecânico -->
+         <!--Comando para criar itens do menu com separação por cabeçalho  -->
+        <div class="bg-white py-2 collapse-inner rounded"> <!-- Inicio da definição do fundo do menu para branco -->
+       <h6 class="collapse-header"> Clientes: </h6> <!-- Collapsed header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
+      <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Pessoa Fisíca </a> <!-- Item do menu que tem referencia a Pessoa Fisica -->
+     <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>"> Pessoa Jurídica </a> <!-- Item do menu que tem referencia a Pessoa Juridica -->
+    </div>
   </div> <!-- Final da definição do fundo do menu -->
  </div> <!-- Final da Aréa liberada para etiqueta -->
 </li> <!-- Aqui termina o item de navegação 01 -->
