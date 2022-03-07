@@ -91,17 +91,17 @@ $nemu10 = "menu10";
          <div class="bg-white py-2 collapse-inner rounded"> <!-- Inicio da definição do fundo do menu para branco -->
           <h6 class="collapse-header"> Empresas: </h6> <!-- Collapsed header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
            <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Cadastro Empresa </a> <!-- Item do menu que tem referencia a Pessoa Fisica -->         
-           <div class="bg-white py-2 collapse-inner rounded"> <!-- Inicio da definição do fundo do menu para branco -->
+           
             <h6 class="collapse-header"> Funcionários: </h6>  <!-- Collapsed Header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
            <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Recepcionistas </a> <!-- Item do menu recolhido que tem referencia a recepcionista -->
           <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>"> Mecânicos </a> <!-- Item do menu recolhido que tem referencia ao mecânico -->
          <!--Comando para criar itens do menu com separação por cabeçalho  -->
-        <div class="bg-white py-2 collapse-inner rounded"> <!-- Inicio da definição do fundo do menu para branco -->
+        
        <h6 class="collapse-header"> Clientes: </h6> <!-- Collapsed header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
       <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Pessoa Fisíca </a> <!-- Item do menu que tem referencia a Pessoa Fisica -->
-     <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>"> Pessoa Jurídica </a> <!-- Item do menu que tem referencia a Pessoa Juridica -->
+     <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>">  Pessoa Jurídica </a> <!-- Item do menu que tem referencia a Pessoa Juridica -->
     </div>
-  </div> <!-- Final da definição do fundo do menu -->
+  
  </div> <!-- Final da Aréa liberada para etiqueta -->
 </li> <!-- Aqui termina o item de navegação 01 -->
 
@@ -113,13 +113,13 @@ $nemu10 = "menu10";
  <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMenu02" aria-expanded="true" aria-controls="collapseMenu02">
    <i class="fa fa-id-card" aria-hidden="true"></i>
-    <span> Menu 02 </span>
+    <span> Financeiro </span>
      </a>
       <div id="collapseMenu02" class="collapse" aria-labelledby="headingMenu02" data-parent="#accordionSidebar">
        <div class="bg-white py-2 collapse-inner rounded">
-       <h6 class="collapse-header"> Dados Menu: </h6>
-      <a class="collapse-item" href="index.php?pag=<?php echo $menu3 ?>"> Menu 3 </a>
-     <a class="collapse-item" href="index.php?pag=<?php echo $menu4 ?>"> Menu 4 </a>
+       <h6 class="collapse-header"> Controle de contas </h6>
+      <a class="collapse-item" href="index.php?pag=<?php echo $menu3 ?>"> Contas a Receber </a>
+     <a class="collapse-item" href="index.php?pag=<?php echo $menu4 ?>"> Contas a Pagar </a>
     <a class="collapse-item" href="index.php?pag=<?php echo $menu5 ?>"> Menu 5 </a>
    </div>
   </div>
@@ -332,7 +332,6 @@ $nemu10 = "menu10";
   </div>
  </div>
 </div>
-
 
 <!-- CSore plugin JavaScript = plugs do java -->
 <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
