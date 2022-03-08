@@ -1,19 +1,16 @@
 <?php
-//local para configurar as variaves global para ser utilizada no sistema.
+// Inserção das variaveis para utilização do sistema, aqui fica as configurações de conexão do banco de dados
+$nome_Oficina = "Watanabe & Hilgemberg SA";
+ $url_Oficina = "http://localhost/git/software/Sistemas/Oficina/Sistemas/";
+  $endereco_Oficina = "Rua Londrina, 422, Centro, Primavera do Leste - MT";
+   $telefone_Oficina = "066 3498 0571"; 
+  $celular_Oficina = "066 9 9975 4921";
+$email_Oficina = "suporteglpihilgemberg@gmail.com";
+//Dados acima serão substituido pelo banco de dados 
 
-//URL endereço utilizado para informar o local onde o sistema está hospedado, mantem a barra na frente do endereço para //quando for concatenar com as paginas do restante do sistema
-$url ="http://localhost/Sistemas/Oficina/";
-
-//bloco utilizado para coonfigurar as variaveis do sistema referente as dados da empresa
-$nome_empresa = "Oficina Mêcanica Hilgemberg";
- $endereco_empresa = "Rua Londrina, 422, Centro, Primavera do Leste, MT";
-  $telefone_empresa = "(66) 9 9975-4921";
-   $email_empresa_adm = "suportehilgemberglglpi@gmail.com";
-
-//Configurações das variaveis globais para banco de dados
-$servidor = "localhost";
- $usuario = "root";
-  $senha = "";
-   $banco = "oficina";   
-
+//Variáveis do banco de dados
+$servidor_BDOficina ='localhost';
+ $usuario_BDOficina = 'root';
+  $senha_BDOficina = '';
+$banco_BDOficina = 'oficina';
 ?>

@@ -4,11 +4,11 @@
 //Variáveis dos menus que serão passados por referência assim evita alteração em varios pontos do sistema
 //O GET será passado por referência    
 $pag = @$_GET["pag"];
- $menu1 = "menu1";
-  $menu2 = "menu2";
-   $menu3 = "menu3";
-    $menu4 = "menu4";
-    $menu5 = "menu5";
+ $menu1 = "../painel-empresa/empresas";
+  $menu2 = "../painel-recepcionista/recepcionistas";
+   $menu3 = "../painel-mecanico/mecanicos";
+    $menu4 = "../painel-clientePF/clientePF";
+    $menu5 = "../painel-clientePJ/clientePJ";
     $menu6 = "menu6";
    $nemu7 = "menu7";
   $nemu8 = "menu8";
@@ -90,16 +90,15 @@ $nemu10 = "menu10";
         <!-- aria label leadby = Etiqueta de aréa liberada, inicio da aréa liberada -->    
          <div class="bg-white py-2 collapse-inner rounded"> <!-- Inicio da definição do fundo do menu para branco -->
           <h6 class="collapse-header"> Empresas: </h6> <!-- Collapsed header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
-           <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Cadastro Empresa </a> <!-- Item do menu que tem referencia a Pessoa Fisica -->         
-           
+           <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Empresa </a> <!-- Item do menu que tem referencia a Pessoa Fisica -->         
             <h6 class="collapse-header"> Funcionários: </h6>  <!-- Collapsed Header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
-           <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Recepcionistas </a> <!-- Item do menu recolhido que tem referencia a recepcionista -->
-          <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>"> Mecânicos </a> <!-- Item do menu recolhido que tem referencia ao mecânico -->
+           <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>"> Recepcionistas </a> <!-- Item do menu recolhido que tem referencia a recepcionista -->
+          <a class="collapse-item" href="index.php?pag=<?php echo $menu3 ?>"> Mecânicos </a> <!-- Item do menu recolhido que tem referencia ao mecânico -->
          <!--Comando para criar itens do menu com separação por cabeçalho  -->
         
        <h6 class="collapse-header"> Clientes: </h6> <!-- Collapsed header = Cabeçalho recolhido, indica o que vai aparecer no subcabeçalho do menu -->
-      <a class="collapse-item" href="index.php?pag=<?php echo $menu1 ?>"> Pessoa Fisíca </a> <!-- Item do menu que tem referencia a Pessoa Fisica -->
-     <a class="collapse-item" href="index.php?pag=<?php echo $menu2 ?>">  Pessoa Jurídica </a> <!-- Item do menu que tem referencia a Pessoa Juridica -->
+      <a class="collapse-item" href="index.php?pag=<?php echo $menu4 ?>"> Pessoa Fisíca </a> <!-- Item do menu que tem referencia a Pessoa Fisica -->
+     <a class="collapse-item" href="index.php?pag=<?php echo $menu5 ?>">  Pessoa Jurídica </a> <!-- Item do menu que tem referencia a Pessoa Juridica -->
     </div>
   
  </div> <!-- Final da Aréa liberada para etiqueta -->

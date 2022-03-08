@@ -1,13 +1,13 @@
 <?php 
- $pag = "clientePF";
+ $pag = "mecanicos";
   require_once("../Config/Conexao.php"); 
    @session_start();
-  /*  
+   /*
     //verificar se o usuário está autenticado
    if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Admin'){
-  echo "<script language='javascript'> window.location='../index.php' </script>";   
- }
-*/ 
+  echo "<script language='javascript'> window.location='../index.php' </script>"; 
+ }*/
+ 
 ?>
 
 <div class="row mt-4 mb-4">
