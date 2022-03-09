@@ -30,7 +30,7 @@
 <tbody>
 
 <?php 
- $query = $pdo->query("SELECT * FROM carac order by id desc ");
+ $query = $pdoBD->query("SELECT * FROM carac order by id desc ");
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {

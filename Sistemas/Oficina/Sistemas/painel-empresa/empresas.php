@@ -1,8 +1,15 @@
 <?php 
  $pag = "empresas";
   require_once("../Config/Conexao.php"); 
-   @session_start();
-   /*
+
+echo $servidor_BDOficina;
+echo $usuario_BDOficina;
+echo $senha_BDOficina;
+echo $banco_BDOficina;
+
+
+  /* @session_start();
+
     //verificar se o usuário está autenticado
    if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Admin'){
   echo "<script language='javascript'> window.location='../index.php' </script>"; 
@@ -22,7 +29,11 @@
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
     <tr>
-   <th>Nome</th>
+     <th>ID Proprietario</th>
+      <th>Razao Social</th>
+       <th>Nome Fantasia</th>
+      <th>CNPJ</th>
+
   <th>Ações</th>
  </tr>
 </thead>
@@ -30,13 +41,16 @@
 <tbody>
 
 <?php 
- $query = $pdo->query("SELECT * FROM carac order by id desc ");
+ $query = $pdoBD->query("select id_Proprietario, razaoSocial_Proprietario, nomeFantasia_Proprietario, CNPJ_Proprietario  from tblproprietario; ");
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {
                     }
-  $nome = $res[$i]['nome'];                   
- $id = $res[$i]['id'];
+
+ $id = $res[$i]['id_Proprietario'];
+  $razao = $res[$i]['razaoSocial_Proprietario'];                   
+$fant = $res[$i]['nomeFantasia_Proprietario'];
+$cnpj = $res[$i]['CNPJ_Proprietario'];
 ?>
 
 <tr>
