@@ -2,15 +2,9 @@
  $pag = "empresas";
   require_once("../Config/Conexao.php"); 
 
-echo $servidor_BDOficina;
-echo $usuario_BDOficina;
-echo $senha_BDOficina;
-echo $banco_BDOficina;
+ @session_start();
 
-
-  /* @session_start();
-
-    //verificar se o usuário está autenticado
+/*    //verificar se o usuário está autenticado
    if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Admin'){
   echo "<script language='javascript'> window.location='../index.php' </script>"; 
  }*/
@@ -18,11 +12,11 @@ echo $banco_BDOficina;
 ?>
 
 <div class="row mt-4 mb-4">
- <a type="button" class="btn-primary btn-sm ml-3 d-none d-md-block" href="index.php?pag=<?php echo $pag ?>&funcao=novo">Nova Característica</a>
+ <a type="button" class="btn-primary btn-sm ml-3 d-none d-md-block" href="index.php?pag=<?php echo $pag ?>&funcao=novo"> Nova Empresa </a>
  <a type="button" class="btn-primary btn-sm ml-3 d-block d-sm-none" href="index.php?pag=<?php echo $pag ?>&funcao=novo">+</a>   
 </div>
 
-<!-- DataTales Example -->
+<!-- DataTales Example = Aqui é inserido o titulo de cada coluna que será apresentado na tela  -->
 <div class="card shadow mb-4">
  <div class="card-body">
   <div class="table-responsive">
@@ -32,16 +26,25 @@ echo $banco_BDOficina;
      <th>ID Proprietario</th>
       <th>Razao Social</th>
        <th>Nome Fantasia</th>
-      <th>CNPJ</th>
-
+        <th>CNPJ</th>
+       <th>Tipo Empresa</th>
+      <th>Numero Filial </th>
+    <th>Status Empresa</th>
+   <th>Email </th>
   <th>Ações</th>
  </tr>
 </thead>
 
 <tbody>
+<!-- Abaixo o select do banco de dados para apresentar na tela os dados selecionados  -->
+<?php  
+ $query = $pdoBD->query(" select a.id_Proprietario, a.razaoSocial_Proprietario, a.nomeFantasia_Proprietario,
+ a.CNPJ_Proprietario, b.descricao_TipoEmpresa, a.idFilial_proprietario, c.descricao_Status, d.Email 
+ from oficina.tblProprietario a 
+ join oficina.tblTipoEmpresa b on (b.id_TipoEmpresa =  a.idTipoEmpresa_Proprietario) 
+ join oficina.tblStatus c on (c.id_Status = a.idStatus_Proprietario) 
+ join oficina.tblemail d on (d.idDono_Email = a.id_Proprietario) order by a.id_Proprietario ");
 
-<?php 
- $query = $pdoBD->query("select id_Proprietario, razaoSocial_Proprietario, nomeFantasia_Proprietario, CNPJ_Proprietario  from tblproprietario; ");
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {
@@ -49,13 +52,26 @@ echo $banco_BDOficina;
 
  $id = $res[$i]['id_Proprietario'];
   $razao = $res[$i]['razaoSocial_Proprietario'];                   
-$fant = $res[$i]['nomeFantasia_Proprietario'];
-$cnpj = $res[$i]['CNPJ_Proprietario'];
+   $fant = $res[$i]['nomeFantasia_Proprietario'];
+    $cnpj = $res[$i]['CNPJ_Proprietario'];
+   $tipoemp = $res[$i]['descricao_TipoEmpresa'];
+  $numfilial = $res[$i]['idFilial_proprietario'];
+ $statusemp = $res[$i]['descricao_Status'];
+$emailemp = $res[$i]['Email'];
 ?>
-
+<!-- Acima é criado as variaveis que receberam os dados que vem do banco de dados -->
 <tr>
-  <td><?php echo $nome ?></td>
-   <td>
+ <td><?php echo $id ?></td>
+  <td><?php echo $razao ?></td>
+   <td><?php echo $fant ?></td>
+    <td><?php echo $cnpj ?></td> 
+    <td><?php echo $tipoemp ?></td> 
+   <td><?php echo $numfilial ?></td> 
+  <td><?php echo $statusemp ?></td> 
+ <td><?php echo $emailemp ?></td>   
+<td>
+<!-- Acima é inserido os dados das variavés na grid que é apresentado ba tela e abaixo as duas funções editar e excluir -->
+
     <a href="index.php?pag=<?php echo $pag ?>&funcao=editar&id=<?php echo $id ?>" class='text-primary mr-1' title='Editar Dados'><i class='far fa-edit'></i></a>
    <a href="index.php?pag=<?php echo $pag ?>&funcao=excluir&id=<?php echo $id ?>" class='text-danger mr-1' title='Excluir Registro'><i class='far fa-trash-alt'></i></a>
   </td>
@@ -67,6 +83,7 @@ $cnpj = $res[$i]['CNPJ_Proprietario'];
   </div>
  </div>
 </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="modalDados" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -239,4 +256,5 @@ if (@$_GET["funcao"] != null && @$_GET["funcao"] == "excluir") {
     "ordering": false
    })
   });
+
 </script>
