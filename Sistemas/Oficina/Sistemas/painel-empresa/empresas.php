@@ -3,6 +3,7 @@
   require_once("../Config/Conexao.php"); 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
  @session_start();
 
 /*    //verificar se o usuário está autenticado
@@ -17,6 +18,11 @@ echo $banco_BDOficina;
 
     //verificar se o usuário está autenticado
 >>>>>>> b6bc48e469527620f701040ed955ecbce8678305
+=======
+ @session_start();
+
+/*    //verificar se o usuário está autenticado
+>>>>>>> 9e90800f588f190f67eb1b680a322f0b61506fe7
    if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Admin'){
   echo "<script language='javascript'> window.location='../index.php' </script>"; 
  }*/
@@ -39,15 +45,21 @@ echo $banco_BDOficina;
       <th>Razao Social</th>
        <th>Nome Fantasia</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e90800f588f190f67eb1b680a322f0b61506fe7
         <th>CNPJ</th>
        <th>Tipo Empresa</th>
       <th>Numero Filial </th>
     <th>Status Empresa</th>
    <th>Email </th>
+<<<<<<< HEAD
 =======
       <th>CNPJ</th>
 
 >>>>>>> b6bc48e469527620f701040ed955ecbce8678305
+=======
+>>>>>>> 9e90800f588f190f67eb1b680a322f0b61506fe7
   <th>Ações</th>
  </tr>
 </thead>
@@ -63,10 +75,13 @@ echo $banco_BDOficina;
  join oficina.tblemail d on (d.idDono_Email = a.id_Proprietario) order by a.id_Proprietario ");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <?php 
  $query = $pdoBD->query("select id_Proprietario, razaoSocial_Proprietario, nomeFantasia_Proprietario, CNPJ_Proprietario  from tblproprietario; ");
 >>>>>>> b6bc48e469527620f701040ed955ecbce8678305
+=======
+>>>>>>> 9e90800f588f190f67eb1b680a322f0b61506fe7
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {
@@ -76,9 +91,14 @@ echo $banco_BDOficina;
 
  $id = $res[$i]['id_Proprietario'];
   $razao = $res[$i]['razaoSocial_Proprietario'];                   
-$fant = $res[$i]['nomeFantasia_Proprietario'];
-$cnpj = $res[$i]['CNPJ_Proprietario'];
+   $fant = $res[$i]['nomeFantasia_Proprietario'];
+    $cnpj = $res[$i]['CNPJ_Proprietario'];
+   $tipoemp = $res[$i]['descricao_TipoEmpresa'];
+  $numfilial = $res[$i]['idFilial_proprietario'];
+ $statusemp = $res[$i]['descricao_Status'];
+$emailemp = $res[$i]['Email'];
 ?>
+<<<<<<< HEAD
 >>>>>>> b6bc48e469527620f701040ed955ecbce8678305
 
  $id = $res[$i]['id_Proprietario'];
@@ -90,6 +110,8 @@ $cnpj = $res[$i]['CNPJ_Proprietario'];
  $statusemp = $res[$i]['descricao_Status'];
 $emailemp = $res[$i]['Email'];
 ?>
+=======
+>>>>>>> 9e90800f588f190f67eb1b680a322f0b61506fe7
 <!-- Acima é criado as variaveis que receberam os dados que vem do banco de dados -->
 <tr>
  <td><?php echo $id ?></td>
