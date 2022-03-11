@@ -11,7 +11,7 @@
 ?>
 
 <div class="row mt-4 mb-4">
- <a type="button" class="btn-primary btn-sm ml-3 d-none d-md-block" href="index.php?pag=<?php echo $pag ?>&funcao=novo">Nova Característica</a>
+ <a type="button" class="btn-primary btn-sm ml-3 d-none d-md-block" href="index.php?pag=<?php echo $pag ?>&funcao=novo">Novo Recepcionista </a>
  <a type="button" class="btn-primary btn-sm ml-3 d-block d-sm-none" href="index.php?pag=<?php echo $pag ?>&funcao=novo">+</a>   
 </div>
 
@@ -30,7 +30,7 @@
 <tbody>
 
 <?php 
- $query = $pdo->query("SELECT * FROM carac order by id desc ");
+ $query = $pdoBD->query("SELECT * FROM carac order by id desc ");
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {

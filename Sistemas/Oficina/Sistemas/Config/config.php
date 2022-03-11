@@ -9,8 +9,8 @@ $email_Oficina = "suporteglpihilgemberg@gmail.com";
 //Dados acima serão substituido pelo banco de dados 
 
 //Variáveis do banco de dados
-$servidor_BDOficina ='localhost';
- $usuario_BDOficina = 'root';
-  $senha_BDOficina = '';
-$banco_BDOficina = 'oficina';
+$servidor_Oficina ="localhost";
+ $usuario_Oficina = "root";
+  $senha_Oficina = "";
+$bancoBD_Oficina = "oficina";
 ?>
