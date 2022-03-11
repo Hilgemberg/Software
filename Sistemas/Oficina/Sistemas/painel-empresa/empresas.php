@@ -2,9 +2,21 @@
  $pag = "empresas";
   require_once("../Config/Conexao.php"); 
 
+<<<<<<< HEAD
  @session_start();
 
 /*    //verificar se o usuário está autenticado
+=======
+echo $servidor_BDOficina;
+echo $usuario_BDOficina;
+echo $senha_BDOficina;
+echo $banco_BDOficina;
+
+
+  /* @session_start();
+
+    //verificar se o usuário está autenticado
+>>>>>>> b6bc48e469527620f701040ed955ecbce8678305
    if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Admin'){
   echo "<script language='javascript'> window.location='../index.php' </script>"; 
  }*/
@@ -26,11 +38,16 @@
      <th>ID Proprietario</th>
       <th>Razao Social</th>
        <th>Nome Fantasia</th>
+<<<<<<< HEAD
         <th>CNPJ</th>
        <th>Tipo Empresa</th>
       <th>Numero Filial </th>
     <th>Status Empresa</th>
    <th>Email </th>
+=======
+      <th>CNPJ</th>
+
+>>>>>>> b6bc48e469527620f701040ed955ecbce8678305
   <th>Ações</th>
  </tr>
 </thead>
@@ -45,10 +62,24 @@
  join oficina.tblStatus c on (c.id_Status = a.idStatus_Proprietario) 
  join oficina.tblemail d on (d.idDono_Email = a.id_Proprietario) order by a.id_Proprietario ");
 
+<<<<<<< HEAD
+=======
+<?php 
+ $query = $pdoBD->query("select id_Proprietario, razaoSocial_Proprietario, nomeFantasia_Proprietario, CNPJ_Proprietario  from tblproprietario; ");
+>>>>>>> b6bc48e469527620f701040ed955ecbce8678305
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {
                     }
+<<<<<<< HEAD
+=======
+
+ $id = $res[$i]['id_Proprietario'];
+  $razao = $res[$i]['razaoSocial_Proprietario'];                   
+$fant = $res[$i]['nomeFantasia_Proprietario'];
+$cnpj = $res[$i]['CNPJ_Proprietario'];
+?>
+>>>>>>> b6bc48e469527620f701040ed955ecbce8678305
 
  $id = $res[$i]['id_Proprietario'];
   $razao = $res[$i]['razaoSocial_Proprietario'];                   
