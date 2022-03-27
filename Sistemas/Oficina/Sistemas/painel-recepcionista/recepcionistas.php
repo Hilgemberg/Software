@@ -22,7 +22,26 @@
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
     <tr>
-   <th>Nome</th>
+   <th> Id Recepcionista </th>
+  <th> Nome Recepcionista </th>
+  <th> CPF </th>
+  <th> Sexo </th>
+  <th> Data Nascimento </th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+  <th>Ações</th>
+
+
   <th>Ações</th>
  </tr>
 </thead>
@@ -30,17 +49,69 @@
 <tbody>
 
 <?php 
- $query = $pdoBD->query("SELECT * FROM carac order by id desc ");
+ $query = $pdoBD->query(" select
+a.id_Recepcionista, a.nome_Recepcionista, a.CPF_Recepcionista, b.descricao_tiposexo, a.dataNascimento_Recepcionista, 
+c.descricao_tipopessoa, a.dataContatacao_Recepcionista, a.dataDemissao_Recepcionista, d.descricao_status,
+e.nu_telefonefixo, f.descricao_tipocontato, g.nu_celular, f.descricao_tipocontato, h.email, h.observacao_Email,
+i.tipolog_endereco, i.nomelog_endereco, i.numerolog_endereco, i.cidadelog_endereco
+from oficina.tblrecepcionista a
+join oficina.tbltiposexo b on (b.id_tiposexo = a.sexo_Recepcionista)
+join oficina.tbltipopessoa c on (c.id_tipopessoa = a.idtipopess_recepcionista)
+join oficina.tblstatus d on (d.id_status =  a.idstatus_recepcionista)
+join oficina.tbltelefonefixo e on (e.iddono_telefonefixo = a.id_recepcionista and e.idtabela_telefonefixo = 'tblrecepcionista')
+join oficina.tbltipocontato f on (f.id_tipocontato = e.idtipo_telefonefixo)
+join oficina.tblcelular g on (g.iddono_celular = a.id_recepcionista and g.idtabela_celular = 'tblrecepcionista' or g.idtipo_celular = f.id_tipocontato)
+join oficina.tblemail h on (h.iddono_email = a.id_recepcionista and h.idtabela_email = 'tblrecepcionista')
+join oficina.tblendereco i on (i.iddono_endereco = a.id_recepcionista and i.idtabela_endereco = 'tblrecepcionista') order by a.id_recepcionista asc");
+
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {
                     }
-  $nome = $res[$i]['nome'];                   
- $id = $res[$i]['id'];
+
+  $rid = $res[$i]['id_recepcionista'];
+  $rnome = $res[$i]['nome_Recepcionista'];                   
+  $rcpf = $res[$i]['CPF_Recepcionista'];
+  $rtpsexo = $res[$i]['descricao_tiposexo'];
+  $rdatanasc = $res[$i]['dataNascimento_Recepcionista'];
+  $rtipopess = $res[$i]['descricao_tipopessoa'];
+  $rdataContrat = $res[$i]['dataContatacao_Recepcionista'];
+  $rdataDemiss = $res[$i]['dataDemissao_Recepcionista'];
+  $rstatus = $res[$i]['descricao_Status'];
+  $rtelefone = $res[$i]['nu_telefonefixo'];
+  $rtpcontato = $res[$i]['descricao_tipocontato'];
+  $rcelular = $res[$i]['nu_celular'];
+  $rtpcelular = $res[$i]['descricao_tipocontato'];
+  $remail = $res[$i]['Email'];
+  $robsemail = $res[$i]['observacao_Email'];
+  $rtplog = $res[$i]['tipolog_endereco'];
+  $rnomelog = $res[$i]['nomelog_endereco'];
+  $rnumlog = $res[$i]['numerolog_endereco'];
+  $rcidade = $res[$i]['cidadelog_endereco'];
+
 ?>
 
 <tr>
-  <td><?php echo $nome ?></td>
+  <td><?php echo $rid ?></td>
+  <td><?php echo $rnome ?></td>
+  <td><?php echo $rcpf ?></td>
+  <td><?php echo $rtp ?></td>
+  <td><?php echo $rdatanasc ?></td>
+  <td><?php echo $rtipopess ?></td>
+  <td><?php echo $rdataContrat ?></td>
+  <td><?php echo $rdataDemiss ?></td>
+  <td><?php echo $rstatus ?></td>
+  <td><?php echo $rtelefone ?></td>
+  <td><?php echo $rtpcontato ?></td>
+  <td><?php echo $rcelular ?></td>
+  <td><?php echo $rtpcelular ?></td>
+  <td><?php echo $remail ?></td>
+  <td><?php echo $robsemail ?></td>
+  <td><?php echo $rtplog ?></td>
+  <td><?php echo $rnomelog ?></td>
+  <td><?php echo $rcidade ?></td>
+
+
    <td>
     <a href="index.php?pag=<?php echo $pag ?>&funcao=editar&id=<?php echo $id ?>" class='text-primary mr-1' title='Editar Dados'><i class='far fa-edit'></i></a>
    <a href="index.php?pag=<?php echo $pag ?>&funcao=excluir&id=<?php echo $id ?>" class='text-danger mr-1' title='Excluir Registro'><i class='far fa-trash-alt'></i></a>
