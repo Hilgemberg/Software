@@ -22,27 +22,25 @@
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
     <tr>
-   <th> Id Recepcionista </th>
-  <th> Nome Recepcionista </th>
-  <th> CPF </th>
-  <th> Sexo </th>
-  <th> Data Nascimento </th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-  <th>Ações</th>
-
-
-  <th>Ações</th>
+    <th> Id Recepcionista </th>
+       <th> Nome Recepcionista </th>
+          <th> CPF </th>
+             <th> Sexo </th>
+                <th> Data Nascimento </th>
+                   <th> Tipo Pessoa </th>
+                      <th> Contratação </th>
+                         <th> Demissão </th>
+                            <th> Status </th>
+                               <th> Telefone Fixo </th>
+                             <th> Contato </th>
+                          <th> Celular </th>
+                       <th> Contato </th>
+                    <th> Email </th>
+                 <th> OBS Email </th>
+              <th> Tipo Logradouro </th>
+           <th> Logradouro </th>
+        <th> Numero </th>
+     <th> Cidade </th>
  </tr>
 </thead>
 
