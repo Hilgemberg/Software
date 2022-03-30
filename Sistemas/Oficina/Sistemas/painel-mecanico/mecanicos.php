@@ -22,7 +22,25 @@
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
     <tr>
-   <th>Nome</th>
+       <th> ID Mecanico </th>
+          <th> Nome </th>
+             <th> CPF </th>
+                <th> Sexo </th>
+                   <th> Data Nascimento </th>
+                      <th> Tipo Pessoa </th>
+                         <th> Contratacao </th>
+                            <th> Demissão </th>
+                               <th> Situação </th>
+                                <th> Telefone Fixo </th>
+                             <th> Tipo Telefone </th>
+                          <th> Celular </th>
+                       <th> Tipo Celular </th>
+                    <th> Email </th>
+                 <th> OBS Email </th>
+              <th> Tipo Logradouro </th>
+           <th> Nome Logradouro </th>   
+        <th> Numero </th>
+     <th> Cidade </th>
   <th>Ações</th>
  </tr>
 </thead>
@@ -30,13 +48,41 @@
 <tbody>
 
 <?php 
- $query = $pdoBD->query("SELECT * FROM carac order by id desc ");
+ $query = $pdoBD->query("select a.id_mecanico, a.nome_mecanico, a.CPF_mecanico, b.descricao_tiposexo, a.dataNascimento_mecanico, 
+                             c.descricao_tipopessoa, a.dataContratto_mecanico, a.dataDemissao_mecanico, d.descricao_status,
+                             e.nu_telefonefixo, f.descricao_tipocontato, g.nu_celular, f.descricao_tipocontato, h.email, h.observacao_Email,
+                             i.tipolog_endereco, i.nomelog_endereco, i.numerolog_endereco, i.cidadelog_endereco from oficina.tblmecanico a
+                             join oficina.tbltiposexo b on (b.id_tiposexo = a.sexo_mecanico)
+                             join oficina.tbltipopessoa c on (c.id_tipopessoa = a.idtipopess_mecanico)
+                             join oficina.tblstatus d on (d.id_status =  a.idstatus_mecanico)
+                             join oficina.tbltelefonefixo e on (e.iddono_telefonefixo = a.id_mecanico and e.idtabela_telefonefixo = 'tblmecanico')
+                             join oficina.tbltipocontato f on (f.id_tipocontato = e.idtipo_telefonefixo)
+                             join oficina.tblcelular g on (g.iddono_celular = a.id_mecanico and g.idtabela_celular = 'tblmecanico' or g.idtipo_celular = f.id_tipocontato)
+                             join oficina.tblemail h on (h.iddono_email = a.id_mecanico and h.idtabela_email = 'tblmecanico')
+                             join oficina.tblendereco i on (i.iddono_endereco = a.id_mecanico and i.idtabela_endereco = 'tblmecanico') order by a.id_mecanico asc");
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {
                     }
-  $nome = $res[$i]['nome'];                   
- $id = $res[$i]['id'];
+     $mid = $res[0]['id_mecanico'];
+      $mnome = $res[0]['nome_mecanico'];
+       $mcpf = $res[0]['CPF_mecanico'];
+        $msexo = $res[0]['descricao_tiposexo'];
+         $mdatanasc = $res[0]['dataNascimento_mecanico'];
+          $mtipopess = $res[0]['descricao_tipopessoa'];
+           $mdataCont = $res[0]['dataContratto_mecanico'];
+            $mdatadesc = $res[0]['dataDemissao_mecanico'];
+             $msituacao = $res[0]['descricao_status'];
+              $mtelfixo = $res[0]['nu_telefonefixo'];
+             $mtptelfixo = $res[0]['descricao_tipocontato'];
+            $mcelular = $res[0]['nu_celular'];
+           $mtpcel = $res[0]['descricao_tipocontato'];
+          $memail = $res[0]['email'];
+         $mobsemail = $res[0]['observacao_Email'];
+        $mtplog = $res[0]['tipolog_endereco'];
+       $mnomelog = $res[0]['nomelog_endereco'];
+      $mnumero = $res[0]['numerolog_endereco'];     
+     $mcidade = $res[0]['cidadelog_endereco'];
 ?>
 
 <tr>
@@ -63,9 +109,39 @@
      if (@$_GET['funcao'] == 'editar') {
      $titulo = "Editar Registro";
       $id2 = $_GET['id'];
-       $query = $pdo->query("SELECT * FROM carac where id = '" . $id2 . "' ");
+       $query = $pdo->query("select a.id_mecanico, a.nome_mecanico, a.CPF_mecanico, b.descricao_tiposexo, a.dataNascimento_mecanico, 
+                             c.descricao_tipopessoa, a.dataContratto_mecanico, a.dataDemissao_mecanico, d.descricao_status,
+                             e.nu_telefonefixo, f.descricao_tipocontato, g.nu_celular, f.descricao_tipocontato, h.email, h.observacao_Email,
+                             i.tipolog_endereco, i.nomelog_endereco, i.numerolog_endereco, i.cidadelog_endereco from oficina.tblmecanico a
+                             join oficina.tbltiposexo b on (b.id_tiposexo = a.sexo_mecanico)
+                             join oficina.tbltipopessoa c on (c.id_tipopessoa = a.idtipopess_mecanico)
+                             join oficina.tblstatus d on (d.id_status =  a.idstatus_mecanico)
+                             join oficina.tbltelefonefixo e on (e.iddono_telefonefixo = a.id_mecanico and e.idtabela_telefonefixo = 'tblmecanico')
+                             join oficina.tbltipocontato f on (f.id_tipocontato = e.idtipo_telefonefixo)
+                             join oficina.tblcelular g on (g.iddono_celular = a.id_mecanico and g.idtabela_celular = 'tblmecanico' or g.idtipo_celular = f.id_tipocontato)
+                             join oficina.tblemail h on (h.iddono_email = a.id_mecanico and h.idtabela_email = 'tblmecanico')
+                             join oficina.tblendereco i on (i.iddono_endereco = a.id_mecanico and i.idtabela_endereco = 'tblmecanico') order by a.id_mecanico asc");
+
       $res = $query->fetchAll(PDO::FETCH_ASSOC);
-     $nome2 = $res[0]['nome'];
+     $mid = $res[0]['id_mecanico'];
+      $mnome = $res[0]['nome_mecanico'];
+       $mcpf = $res[0]['CPF_mecanico'];
+        $msexo = $res[0]['descricao_tiposexo'];
+         $mdatanasc = $res[0]['dataNascimento_mecanico'];
+          $mtipopess = $res[0]['descricao_tipopessoa'];
+           $mdataCont = $res[0]['dataContratto_mecanico'];
+            $mdatadesc = $res[0]['dataDemissao_mecanico'];
+             $msituacao = $res[0]['descricao_status'];
+              $mtelfixo = $res[0]['nu_telefonefixo'];
+             $mtptelfixo = $res[0]['descricao_tipocontato'];
+            $mcelular = $res[0]['nu_celular'];
+           $mtpcel = $res[0]['descricao_tipocontato'];
+          $memail = $res[0]['email'];
+         $mobsemail = $res[0]['observacao_Email'];
+        $mtplog = $res[0]['tipolog_endereco'];
+       $mnomelog = $res[0]['nomelog_endereco'];
+      $mnumero = $res[0]['numerolog_endereco'];     
+     $mcidade = $res[0]['cidadelog_endereco'];
       } else {
       $titulo = "Inserir Registro";
       }

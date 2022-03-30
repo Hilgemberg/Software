@@ -22,7 +22,7 @@
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
     <tr>
-    <th> Id Recepcionista </th>
+    <th> IdRecepcionista </th>
        <th> Nome Recepcionista </th>
           <th> CPF </th>
              <th> Sexo </th>
