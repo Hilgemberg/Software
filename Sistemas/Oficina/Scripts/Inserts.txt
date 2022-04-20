@@ -1,4 +1,4 @@
---- Tabela Status
+-- Tabela Status
 INSERT INTO tblStatus (descricao_Status, situacao_Status) VALUES ('Ativo', 'A');
 INSERT INTO tblStatus (descricao_Status, situacao_Status) VALUES ('Inatvo', 'A');
 INSERT INTO tblStatus (descricao_Status, situacao_Status) VALUES ('Excluido', 'A');
@@ -80,5 +80,5 @@ INSERT INTO tblEmail (idTabela_Email, idDono_Email, Email, observacao_Email) VAL
 INSERT INTO tblEmail (idTabela_Email, idDono_Email, Email, observacao_Email) VALUES ('tblProprietario', '2', 'suporteglpihilgemberg@gmail.com', 'Filial 01');
 
 -- Tabela Telefone da empresa 
-INSERT INTO tblTelefoneFixo (idTabela_TelefoneFixo, idDono_TelefoneFixo, nu_TelefoneFixo, idTipo_TelefoneFixo, idtatus_TelefoneFixo) VALUES ('tblProprietario', '1', '06634980571', '2', '1');
-INSERT INTO tblTelefoneFixo (idTabela_TelefoneFixo, idDono_TelefoneFixo, nu_TelefoneFixo, idTipo_TelefoneFixo, idtatus_TelefoneFixo) VALUES ('tblProprietario', '2', '06634980571', '2', '1');
+INSERT INTO tblTelefoneFixo (idTabela_TelefoneFixo, idDono_TelefoneFixo, nu_TelefoneFixo, idTipo_TelefoneFixo, idstatus_TelefoneFixo) VALUES ('tblProprietario', '1', '06634980571', '2', '1');
+INSERT INTO tblTelefoneFixo (idTabela_TelefoneFixo, idDono_TelefoneFixo, nu_TelefoneFixo, idTipo_TelefoneFixo, idstatus_TelefoneFixo) VALUES ('tblProprietario', '2', '06634980571', '2', '1');
