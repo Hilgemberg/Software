@@ -48,10 +48,7 @@
 <tbody>
 
 <?php 
- $query = $pdoBD->query("select a.id_mecanico, a.nome_mecanico, a.CPF_mecanico, b.descricao_tiposexo, a.dataNascimento_mecanico, 
-                             c.descricao_tipopessoa, a.dataContratto_mecanico, a.dataDemissao_mecanico, d.descricao_status,
-                             e.nu_telefonefixo, f.descricao_tipocontato, g.nu_celular, f.descricao_tipocontato, h.email, h.observacao_Email,
-                             i.tipolog_endereco, i.nomelog_endereco, i.numerolog_endereco, i.cidadelog_endereco from oficina.tblmecanico a
+ $query = $pdoBD->query("select a.id_mecanico, a.nome_mecanico, a.CPF_mecanico, b.descricao_tiposexo, a.dataNascimento_mecanico, c.descricao_tipopessoa, a.dataContrato_mecanico, a.dataDemissao_mecanico, d.descricao_status, e.nu_telefonefixo, f.descricao_tipocontato, g.nu_celular, f.descricao_tipocontato, h.email, h.observacao_Email, i.tipolog_endereco, i.nomelog_endereco, i.numerolog_endereco, i.cidadelog_endereco from oficina.tblmecanico a
                              join oficina.tbltiposexo b on (b.id_tiposexo = a.sexo_mecanico)
                              join oficina.tbltipopessoa c on (c.id_tipopessoa = a.idtipopess_mecanico)
                              join oficina.tblstatus d on (d.id_status =  a.idstatus_mecanico)
