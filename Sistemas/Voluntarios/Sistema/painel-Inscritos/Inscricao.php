@@ -1,22 +1,19 @@
 <?php 
 $pag = "carac";
 require_once("../../conexao.php"); 
-@session_start();
+/*@session_start();
     //verificar se o usuário está autenticado
 if(@$_SESSION['id_usuario'] == null || @$_SESSION['nivel_usuario'] != 'Admin'){
     echo "<script language='javascript'> window.location='../index.php' </script>";
-
 }
-
+*/
 
 ?>
 
 <div class="row mt-4 mb-4">
-    <a type="button" class="btn-primary btn-sm ml-3 d-none d-md-block" href="index.php?pag=<?php echo $pag ?>&funcao=novo">Nova Característica</a>
+    <a type="button" class="btn-primary btn-sm ml-3 d-none d-md-block" href="index.php?pag=<?php echo $pag ?>&funcao=novo">Nova Inscrição</a>
     <a type="button" class="btn-primary btn-sm ml-3 d-block d-sm-none" href="index.php?pag=<?php echo $pag ?>&funcao=novo">+</a>
-    
 </div>
-
 
 
 <!-- DataTales Example -->

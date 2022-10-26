@@ -3,7 +3,7 @@
     //variaveis para o menu
 //O get será passado uma referencia 
     $pag = @$_GET["pag"]; 
-    $menu1 = "Inscritos";
+    $menu1 = "../painel-Inscritos/Inscricao";
     $menu2 = "Voluntarios";
     $menu3 = "Programas";
     $menu4 = "Projetos";
