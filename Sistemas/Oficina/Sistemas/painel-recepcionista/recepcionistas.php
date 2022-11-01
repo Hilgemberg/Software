@@ -111,8 +111,10 @@ join oficina.tblendereco i on (i.iddono_endereco = a.id_recepcionista and i.idta
 
 
    <td>
-    <a href="index.php?pag=<?php echo $pag ?>&funcao=editar&id=<?php echo $id ?>" class='text-primary mr-1' title='Editar Dados'><i class='far fa-edit'></i></a>
+    <a href="index.php?pag=<?php echo $pag ?>&funcao=editar&id=<?php echo $id ?>" class='text-primary mr-1' title='Editar Registro'><i class='far fa-edit'></i></a>
+    <!--Acima fica a descrição do botão que vai editar o registro no banco de dados -->
    <a href="index.php?pag=<?php echo $pag ?>&funcao=excluir&id=<?php echo $id ?>" class='text-danger mr-1' title='Excluir Registro'><i class='far fa-trash-alt'></i></a>
+    <!--Acima fica a descrição do botão que vai excluir o dado, aqui devemos tomar cuidado pois nem sempre podemos ecluir o ideal é efetuar uma edição no dado mudando a situação dele  para inativo e assim não carregar na tela e mantendo um historico -->
   </td>
  </tr>
 <?php } ?>

@@ -32,7 +32,6 @@
        <th>Numero Filial </th>
       <th>Status Empresa</th>
      <th>Email </th>
-    <th>CNPJ</th>
    <th>Telefone</th>   
   <th>Ações</th>
  </tr>
@@ -79,8 +78,10 @@ $etelefonefixo = $res[$i]['nu_TelefoneFixo'];
 <td>
 <!-- Acima é inserido os dados das variavés na grid queé apresentado ba tela e abaixo as duas funções editar e excluir -->
 
-    <a href="index.php?pag=<?php echo $pag ?>&funcao=editar&id=<?php echo $id ?>" class='text-primary mr-1' title='Editar Dados'><i class='far fa-edit'></i></a>
+    <a href="index.php?pag=<?php echo $pag ?>&funcao=editar&id=<?php echo $id ?>" class='text-primary mr-1' title='Editar Registro'><i class='far fa-edit'></i></a>
+    <!--Acima fica a descrição do botão que vai editar o registro no banco de dados -->
    <a href="index.php?pag=<?php echo $pag ?>&funcao=excluir&id=<?php echo $id ?>" class='text-danger mr-1' title='Excluir Registro'><i class='far fa-trash-alt'></i></a>
+    <!--Acima fica a descrição do botão que vai excluir o dado, aqui devemos tomar cuidado pois nem sempre podemos ecluir o ideal é efetuar uma edição no dado mudando a situação dele  para inativo e assim não carregar na tela e mantendo um historico -->
   </td>
  </tr>
 <?php } ?>
@@ -101,7 +102,14 @@ $etelefonefixo = $res[$i]['nu_TelefoneFixo'];
      if (@$_GET['funcao'] == 'editar') {
      $titulo = "Editar Registro";
       $id2 = $_GET['id'];
-       $query = $pdo->query("SELECT * FROM carac where id = '" . $id2 . "' ");
+       $query = $pdo->query("select a.id_Proprietario, a.razaoSocial_Proprietario, a.nomeFantasia_Proprietario,
+                             a.CNPJ_Proprietario, b.descricao_TipoEmpresa, a.idFilial_proprietario, c.descricao_Status, d.Email,
+                             e.nu_TelefoneFixo  from oficina.tblProprietario a 
+                             join oficina.tblTipoEmpresa b on (b.id_TipoEmpresa =  a.idTipoEmpresa_Proprietario) 
+                             join oficina.tblStatus c on (c.id_Status = a.idStatus_Proprietario) 
+                             join oficina.tblemail d on (d.idDono_Email = a.id_Proprietario) 
+                             join oficina.tbltelefoneFixo e on (e.idDono_TelefoneFixo = a.id_Proprietario and e.idTabela_TelefoneFixo = 'tblProprietario')
+                             where id = '" . $id2 . "' ");
       $res = $query->fetchAll(PDO::FETCH_ASSOC);
      $nome2 = $res[0]['nome'];
       } else {

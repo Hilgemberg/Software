@@ -10,10 +10,10 @@ $pag = @$_GET["pag"];
     $menu4 = "../painel-clientePF/clientePF";
     $menu5 = "../painel-clientePJ/clientePJ";
     $menu6 = "menu6";
-   $nemu7 = "menu7";
-  $nemu8 = "menu8";
- $nemu9 = "menu9";
-$nemu10 = "menu10";
+   $menu7 = "menu7";
+  $menu8 = "menu8";
+ $menu9 = "menu9";
+$menu10 = "menu10";
 
 //Abaixo fica o fechamento das declarações de variáveis 
  ?>
@@ -117,9 +117,9 @@ $nemu10 = "menu10";
       <div id="collapseMenu02" class="collapse" aria-labelledby="headingMenu02" data-parent="#accordionSidebar">
        <div class="bg-white py-2 collapse-inner rounded">
        <h6 class="collapse-header"> Controle de contas </h6>
-      <a class="collapse-item" href="index.php?pag=<?php echo $menu3 ?>"> Contas a Receber </a>
-     <a class="collapse-item" href="index.php?pag=<?php echo $menu4 ?>"> Contas a Pagar </a>
-    <a class="collapse-item" href="index.php?pag=<?php echo $menu5 ?>"> Menu 5 </a>
+      <a class="collapse-item" href="index.php?pag=<?php echo $menu6 ?>"> Contas a Receber </a>
+     <a class="collapse-item" href="index.php?pag=<?php echo $menu7 ?>"> Contas a Pagar </a>
+    <a class="collapse-item" href="index.php?pag=<?php echo $menu8 ?>"> Menu 5 </a>
    </div>
   </div>
  </li>
@@ -138,9 +138,9 @@ $nemu10 = "menu10";
      <!-- Neste ponto alteramos dois locais para indicar que o menu é outro. id="collapse = Nome do menu" e aria-labelledby="heading + Nome do Menu" -->
       <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header"> Dados Menu: </h6>
-     <a class="collapse-item" href="index.php?pag=<?php echo $menu6 ?>">Menu 6</a>
-    <a class="collapse-item" href="index.php?pag=<?php echo $menu7 ?>">Menu 7</a>
-   <a class="collapse-item" href="index.php?pag=<?php echo $menu8 ?>">Menu 8</a>
+     <a class="collapse-item" href="index.php?pag=<?php echo $menu9 ?>">Menu 6</a>
+    <a class="collapse-item" href="index.php?pag=<?php echo $menu10 ?>">Menu 7</a>
+   <a class="collapse-item" href="index.php?pag=<?php echo $menu11 ?>">Menu 8</a>
   </div>
  </div>
 </li>
