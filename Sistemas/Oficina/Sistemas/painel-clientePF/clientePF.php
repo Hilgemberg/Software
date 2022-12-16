@@ -22,7 +22,23 @@
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
     <tr>
-   <th>Nome</th>
+    <th> ID Cliente </th>
+     <th> Nome </th>
+      <th> CPF </th>
+       <th> Sexo Cliente </th>
+        <th> Data Nascimento </th>
+         <th> Tipo Pessoa </th>
+          <th> Status </th>
+           <th> Telefone Fixo </th>
+            <th> Tipo do Contato </th>
+           <th>  Celular </th>
+          <th> Tipo Contato </th>
+         <th> E_mail </th>
+        <th> Obs. E_mail </th>
+       <th> Tipo Logradouro </th>
+      <th> Logradouro </th>
+     <th> Numero Logradouro </th>
+    <th> Cidade  </th>
   <th>Ações</th>
  </tr>
 </thead>
@@ -30,18 +46,63 @@
 <tbody>
 
 <?php 
- $query = $pdoBD->query("SELECT * FROM carac order by id desc ");
+ $query = $pdoBD->query(" select 
+                            a.id_ClientePF, a.nome_ClientePF, a.CPF_ClientePF, b.descricao_tiposexo, a.dataNascimento_ClientePF, 
+                            c.descricao_tipopessoa, d.descricao_status,
+                            e.nu_telefonefixo, f.descricao_tipocontato, g.nu_celular, f.descricao_tipocontato, h.email, h.observacao_Email,
+                            i.tipolog_endereco, i.nomelog_endereco, i.numerolog_endereco, i.cidadelog_endereco
+                            from oficina.tblclientepf a
+                            join oficina.tbltiposexo b on (b.id_tiposexo = a.sexo_ClientePF)
+                            join oficina.tbltipopessoa c on (c.id_tipopessoa = a.idtipopess_ClientePF)
+                            join oficina.tblstatus d on (d.id_status =  a.idstatus_ClientePF)
+                            join oficina.tbltelefonefixo e on (e.iddono_telefonefixo = a.id_ClientePF and e.idtabela_telefonefixo = 'tblclientepf')
+                            join oficina.tbltipocontato f on (f.id_tipocontato = e.idtipo_telefonefixo)
+                            join oficina.tblcelular g on (g.iddono_celular = a.id_ClientePF and g.idtabela_celular = 'tblclientepf' or g.idtipo_celular = f.id_tipocontato)
+                            join oficina.tblemail h on (h.iddono_email = a.id_ClientePF and h.idtabela_email = 'tblclientepf')
+                            join oficina.tblendereco i on (i.iddono_endereco = a.id_ClientePF and i.idtabela_endereco = 'tblclientepf') 
+                            order by a.id_ClientePF asc;");
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {
-                    }
-  $nome = $res[$i]['nome'];                   
- $id = $res[$i]['id'];
+                    }               
+ $pfId = $res[$i]['id_ClientePF'];
+  $pfNome = $res[$i]['nome_ClientePF,'];
+   $pfCpf = $res[$i]['CPF_ClientePF'];
+    $pfTpsexo = $res[$i]['descricao_tiposexo'];
+     $pfDtNasc = $res[$i]['dataNascimento_ClientePF'];
+      $pfTppess = $res[$i]['descricao_tipopessoa'];
+       $pfStatus = $res[$i]['descricao_status'];
+        $pfTelfixo = $res[$i]['nu_telefonefixo'];
+         $pfTpContato = $res[$i]['descricao_tipocontato'];
+        $pfCelular = $res[$i]['nu_celular,'];
+       $pfTpContcel = $res[$i]['descricao_tipocontato'];
+      $pfemail = $res[$i]['email'];
+     $pfObsemail = $res[$i]['observacao_Email'];
+    $pfTplog = $res[$i]['tipolog_endereco'];
+   $pfLog = $res[$i]['nomelog_endereco'];
+  $pfNumlog = $res[$i]['numerolog_endereco'];
+ $pfCidade = $res[$i]['cidadelog_endereco'];
 ?>
 
 <tr>
-  <td><?php echo $nome ?></td>
-   <td>
+  <td><?php echo $pfId ?></td>
+   <td><?php echo $pfNome ?></td>
+    <td><?php echo $pfCpf ?></td>
+     <td><?php echo $pfTpsexo ?></td>
+      <td><?php echo $pfDtNasc ?></td>
+       <td><?php echo $pfTppess ?></td>
+        <td><?php echo $pfStatus ?></td>
+         <td><?php echo $pfTelfixo ?></td>
+          <td><?php echo $pfTpContato ?></td>
+          <td><?php echo $pfCelular ?></td>
+         <td><?php echo $pfTpContcel ?></td>
+        <td><?php echo $pfemail ?></td>
+       <td><?php echo $pfObsemail ?></td>
+      <td><?php echo $pfTplog ?></td>
+     <td><?php echo $pfLog ?></td>
+    <td><?php echo $pfNumlog ?></td>
+   <td><?php echo $pfCidade ?></td>
+  <td>
     <a href="index.php?pag=<?php echo $pag ?>&funcao=editar&id=<?php echo $id ?>" class='text-primary mr-1' title='Editar Dados'><i class='far fa-edit'></i></a>
    <a href="index.php?pag=<?php echo $pag ?>&funcao=excluir&id=<?php echo $id ?>" class='text-danger mr-1' title='Excluir Registro'><i class='far fa-trash-alt'></i></a>
   </td>

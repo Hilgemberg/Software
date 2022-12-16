@@ -30,7 +30,20 @@
 <tbody>
 
 <?php 
- $query = $pdoBD->query("SELECT * FROM carac order by id desc ");
+ $query = $pdoBD->query("select
+                               a.id_ClientePJ, a.razaoSocial_ClientePJ, a.nomeFantasia_ClientePJ, a.idTipoPess_ClientePJ, a.CNPJ_ClientePJ, 
+                               c.descricao_tipopessoa, d.descricao_status,
+                               e.nu_telefonefixo, f.descricao_tipocontato, g.nu_celular, f.descricao_tipocontato, h.email, h.observacao_Email,
+                               i.tipolog_endereco, i.nomelog_endereco, i.numerolog_endereco, i.cidadelog_endereco
+                               from oficina.tblclientepj a
+                               join oficina.tbltipopessoa c on (c.id_tipopessoa = a.idtipopess_ClientePJ)
+                               join oficina.tblstatus d on (d.id_status =  a.idstatus_ClientePJ)
+                               join oficina.tbltelefonefixo e on (e.iddono_telefonefixo = a.id_ClientePJ and e.idtabela_telefonefixo = 'tblclientepj')
+                               join oficina.tbltipocontato f on (f.id_tipocontato = e.idtipo_telefonefixo)
+                               join oficina.tblcelular g on (g.iddono_celular = a.id_ClientePJ and g.idtabela_celular = 'tblclientepj' or g.idtipo_celular = f.id_tipocontato)
+                               join oficina.tblemail h on (h.iddono_email = a.id_ClientePJ and h.idtabela_email = 'tblclientepj')
+                               join oficina.tblendereco i on (i.iddono_endereco = a.id_ClientePJ and i.idtabela_endereco = 'tblclientepj') 
+                               order by a.id_ClientePJ asc; ");
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
    for ($i=0; $i < count($res); $i++) { 
    foreach ($res[$i] as $key => $value) {
